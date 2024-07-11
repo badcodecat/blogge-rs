@@ -1,4 +1,14 @@
-fn main()
+#[macro_use] extern crate rocket;
+
+#[get("/")]
+fn index() -> &'static str
 {
-	println!("Hello, World!");
+	"Hello, World!"
+}
+
+#[launch]
+fn rocket() -> _
+{
+	rocket::build()
+		.mount("/", routes![index])
 }
