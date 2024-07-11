@@ -5,7 +5,7 @@ fn index() -> &'static str
 }
 
 #[rocket::launch]
-fn rocket() -> _
+fn rocket() -> rocket::Rocket<rocket::Build>
 {
 	use rocket::routes;
 	rocket::build()
